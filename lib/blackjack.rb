@@ -60,6 +60,9 @@ end
 #####################################################
 
 def runner
-  # code runner here
+  welcome
+  initial_round
+  hit?
+  display_card_total
 end
     
