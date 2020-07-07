@@ -28,20 +28,27 @@ def initial_round
   return first_round
 end
 
+# def hit?(card_total)
+#   prompt_user
+#   user_input = get_user_input()
+#   user_input == 'h'? card_total += deal_card : card_total
+#   user_input != 'h' or 's'
+#   return invalid_command
+# end
+
 def hit?(card_total)
-  counter = 0 
-  input = ['h','s']
-  
-  while counter < 3
+  prompt_user
+  user_input = get_user_input()
+  if user_input == 'h'
+    card_total += deal_card
+    puts card_total
+  elseif user_input == 's'
+    puts card_total
+  else user_input != 'h' or 's'
+    invalid_command
     prompt_user
-    user_input = get_user_input
-    if user_input = 'h'
-    deal_card
-    display_card_total
-     end
-     counter += 1 
-   end 
-end
+  end
+  
 
 def invalid_command
   puts 'Please enter a valid command'
